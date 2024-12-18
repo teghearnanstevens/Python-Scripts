@@ -1,0 +1,92 @@
+-- Create Films table
+CREATE TABLE Films (
+    FilmID INT PRIMARY KEY,
+    Title VARCHAR(255),
+    ReleaseDate DATE,
+    Director VARCHAR(255),
+    EpisodeNumber INT
+);
+
+-- Create Characters table
+CREATE TABLE Characters (
+    CharacterID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Gender VARCHAR(10),
+    Species VARCHAR(255),
+    Homeworld VARCHAR(255)
+);
+
+-- Create Planets table
+CREATE TABLE Planets (
+    PlanetID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Climate VARCHAR(255),
+    Terrain VARCHAR(255),
+    Population BIGINT
+);
+
+-- Create Species table
+CREATE TABLE Species (
+    SpeciesID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Classification VARCHAR(50),
+    AverageLifespan INT,
+    Language VARCHAR(50)
+);
+
+-- Create Vehicles table
+CREATE TABLE Vehicles (
+    VehicleID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Model VARCHAR(255),
+    Manufacturer VARCHAR(255),
+    VehicleType VARCHAR(50)
+);
+
+-- Create Starships table
+CREATE TABLE Starships (
+    StarshipID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Model VARCHAR(255),
+    Manufacturer VARCHAR(255),
+    StarshipClass VARCHAR(50)
+);
+
+-- Create CharactersFilms table (Many-to-Many)
+CREATE TABLE CharactersFilms (
+    CharacterFilmID INT PRIMARY KEY,
+    CharacterID INT,
+    FilmID INT,
+    Role VARCHAR(100),
+    FOREIGN KEY (CharacterID) REFERENCES Characters(CharacterID),
+    FOREIGN KEY (FilmID) REFERENCES Films(FilmID)
+);
+
+-- Create CharactersSpecies table (Many-to-Many)
+CREATE TABLE CharactersSpecies (
+    CharacterSpeciesID INT PRIMARY KEY,
+    CharacterID INT,
+    SpeciesID INT,
+    FOREIGN KEY (CharacterID) REFERENCES Characters(CharacterID),
+    FOREIGN KEY (SpeciesID) REFERENCES Species(SpeciesID)
+);
+
+-- Create CharactersVehicles table (Many-to-Many)
+CREATE TABLE CharactersVehicles (
+    CharacterVehicleID INT PRIMARY KEY,
+    CharacterID INT,
+    VehicleID INT,
+    PilotRole VARCHAR(100),
+    FOREIGN KEY (CharacterID) REFERENCES Characters(CharacterID),
+    FOREIGN KEY (VehicleID) REFERENCES Vehicles(VehicleID)
+);
+
+-- Create CharactersStarships table (Many-to-Many)
+CREATE TABLE CharactersStarships (
+    CharacterStarshipID INT PRIMARY KEY,
+    CharacterID INT,
+    StarshipID INT,
+    PilotRole VARCHAR(100),
+    FOREIGN KEY (CharacterID) REFERENCES Characters(CharacterID),
+    FOREIGN KEY (StarshipID) REFERENCES Starships(StarshipID)
+);

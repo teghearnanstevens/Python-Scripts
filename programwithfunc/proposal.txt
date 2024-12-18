@@ -1,0 +1,66 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+1. What is the title of your program?
+
+Restate_agents.py & exconverter.py 
+
+2. What real-world problem will your program address or help to solve?
+
+These two files go hand in hand, the problem that I am solving is real estate agent data insertion. Someone in my company has to every year or so go through 800+ agents and write down their
+information on an excel spreadsheet. Well no longer these to programs will do this for you. One collects the data the other converts the csv data into an excel spreadsheet. 
+
+3. What will you learn from developing this program?
+
+I will learn how to use python automation to help with mundane tasks like data entries and recording. 
+
+4. What Python modules will your program use?
+
+    (Some examples are: csv, datetime, functools, matplotlib, math,
+    pandas, pytest, random, requests, and tkinter.)
+
+    os
+    pandas 
+    selenium 
+    webdriver 
+    By
+    WebDriverWait
+    expected_conditions
+    time
+    csv
+    load_workbook
+    openpyxl
+    font
+    alginment
+    get_column_letter
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+
+    (Remember that the most reusable functions don't get user input and
+    don't print results but instead have parameters and return a result.
+    Functions that get user input and print results are important and do
+    useful work but are not easily reusable.)
+
+    (Remember also that it's hard to test functions that get user input
+    and print results. It's easy to test functions that don't get user
+    input and don't print results but instead have parameters and return
+    a result. Therefore, you should write most of your program functions
+    to have parameters and return a result.)
+
+    I will have two files that complete different tasks but do not ask for user inputs or print on the console but rather copy 
+    data and paste it into sorted columns in a csv file. 
+
+6. Will you write test functions to test at least two of your program
+functions?
+
+Yes, I will write test functions to test at least two of my program functions.
+
